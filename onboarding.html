@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Onboarding</title>
+    <style>
+        :root {
+            --primary-bg: #0E0E0E;
+            --secondary-bg: #121212;
+            --card-bg: #161616;
+            --card-bg-light: #1A1A1A;
+            --accent: #F7931A;
+            --accent-hover: #FF8C1A;
+            --text-white: #FFFFFF;
+            --text-gray: #9A9A9A;
+            --warning-bg: #2A0F12;
+            --warning-bg-light: #3A1418;
+            --warning-text: #FF6B6B;
+            --border-color: #2D2D2D;
+            --radius: 8px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to bottom, var(--primary-bg), var(--secondary-bg));
+            font-family: 'Inter', 'Manrope', 'SF Pro Display', sans-serif;
+            color: var(--text-white);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            overflow-y: auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .check-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .check-icon::after {
+            content: "✓";
+            color: #000;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .status {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .sub-status {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .alert-card {
+            background: linear-gradient(to right, var(--warning-bg), var(--warning-bg-light));
+            border-radius: var(--radius);
+            padding: 16px;
+            margin: 24px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .alert-icon {
+            color: var(--warning-text);
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        .alert-title {
+            color: var(--warning-text);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .alert-content {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 24px 0 16px;
+        }
+
+        .section-icon {
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .step {
+            background: var(--card-bg-light);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 16px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000;
+            font-size: 16px;
+        }
+
+        .step-title {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .step-content {
+            margin-left: 44px;
+        }
+
+        .step-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 12px 0;
+        }
+
+        .step-content li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .step-content li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .step-content p {
+            margin: 12px 0;
+            color: var(--text-gray);
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: var(--accent);
+            color: #000;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: var(--radius);
+            font-weight: bold;
+            text-align: center;
+            margin: 16px 0;
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+            opacity: 0.9;
+        }
+
+        .telegram-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .disqualification {
+            background: linear-gradient(to right, var(--warning-bg), var(--warning-bg-light));
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .disqualification-title {
+            color: var(--warning-text);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .disqualification ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 12px 0;
+        }
+
+        .disqualification li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .disqualification li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--warning-text);
+        }
+
+        .final-warning {
+            color: var(--warning-text);
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        .challenge-overview {
+            background: var(--card-bg-light);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .overview-label {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .overview-value {
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .step-content {
+                margin-left: 0;
+            }
+            
+            .step-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .cta-button {
+                padding: 12px;
+                font-size: 14px;
+            }
+            
+            .challenge-overview {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .check-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .step-number {
+                width: 28px;
+                height: 28px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Complete Your Onboarding</h1>
+            <div class="check-icon"></div>
+            <div class="status">You're Registered</div>
+            <div class="sub-status">Complete these steps to get full access.</div>
+        </div>
+
+        <div class="alert-card">
+            <div class="alert-icon">⚠️</div>
+            <div>
+                <div class="alert-title">Important Notice</div>
+                <div class="alert-content">
+                    This is not a demo challenge. This is not a signal group. This is not gambling. You will be trading real capital under real market conditions. Failure to follow the steps below will result in automatic disqualification.
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <div class="section-icon">⚙️</div>
+            <div class="section-title">Challenge Requirements</div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <div class="step-title">Fund a Real Trading Account (Mandatory)</div>
+            </div>
+            <div class="step-content">
+                <ul>
+                    <li>Minimum funding: <strong>$10</strong></li>
+                    <li>Demo accounts are <strong>NOT allowed</strong></li>
+                    <li>One real account per participant</li>
+                    <li>No funded account = no access.</li>
+                </ul>
+                <a href="https://track.deriv.com/_I8Af2QK5beoKqFKZ7JdnQ2Nd7ZgqdRLk/1/" target="_blank" class="cta-button">
+                    <span>🔗</span> Signup & Fund Your Account ($10 Minimum)
+                </a>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <div class="step-title">Strategy & Risk Freedom</div>
+            </div>
+            <div class="step-content">
+                <ul>
+                    <li>Use any trading strategy</li>
+                    <li>Trade any timeframe or instrument</li>
+                    <li>Apply any risk management model</li>
+                </ul>
+                <p>You are fully responsible for your risk decisions, execution, and results. This challenge is about <strong>discipline, consistency, and real decision-making</strong>.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <div class="step-title">Send Proof of Funding (Required)</div>
+            </div>
+            <div class="step-content">
+                <p>After funding your account, submit proof of funding for verification.</p>
+                <p>Screenshot must show:</p>
+                <ul>
+                    <li>Broker name</li>
+                    <li>Account ID or number</li>
+                    <li>Account balance</li>
+                    <li>MT5 login ID and Investor password( READ ONLY</li>
+                </ul>
+                <p><em>Sensitive details may be blurred, but all required information must be visible.</em></p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <div class="step-title">Submit Proof to Support Team</div>
+            </div>
+            <div class="step-content">
+                <p>Send your proof of funding to the Support Team for verification.</p>
+                <a href="https://t.me/thechallengesupport" target="_blank" class="telegram-link">
+                    <span>💬</span> Telegram: @TheChallengeSupport
+                </a>
+                <a href="https://t.me/thechallengesupport" target="_blank" class="cta-button">
+                    <span>📤</span> Send Proof of Funding Now
+                </a>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <div class="step-title">Verification & Final Onboarding</div>
+            </div>
+            <div class="step-content">
+                <p>Once your proof is reviewed and approved:</p>
+                <ul>
+                    <li>Your participation is confirmed</li>
+                    <li>You receive final onboarding instructions</li>
+                    <li>You gain full challenge access</li>
+                </ul>
+                <p><span style="color: var(--accent);">⏱️ Verification timeframe: within 24 hours</span></p>
+                <p><em>Do not request access until verification is complete.</em></p>
+            </div>
+        </div>
+
+        <div class="disqualification">
+            <div class="disqualification-title">
+                <span>🚫</span> Disqualification Conditions
+            </div>
+            <ul>
+                <li>Proof of funding is not submitted</li>
+                <li>Submitted proof is fake or edited</li>
+                <li>Wrong broker is used</li>
+                <li>Multiple accounts detected</li>
+            </ul>
+            <div class="final-warning">No warnings. No appeals.</div>
+        </div>
+
+        <div class="challenge-overview">
+            <div class="overview-label">Challenge Overview</div>
+            <div class="overview-value">Duration: 14 Days</div>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to buttons
+            const buttons = document.querySelectorAll('.cta-button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-1px)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+                
+                button.addEventListener('mousedown', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.opacity = '0.9';
+                });
+                
+                button.addEventListener('mouseup', function() {
+                    this.style.opacity = '1';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRADING $10 IS HARDER THAN TRADING $10,000</title>
+    <style>
+        body {
+            background-color: white; /* Ensure the iframe has a white background */
+        }
+
+        /* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Global Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #FF7A00;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.section-tag::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 2px;
+    background-color: #FF7A00;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.cta-button {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    background-color: #FF7A00;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.cta-button:hover {
+    background-color: #FF8C2D;
+    box-shadow: 0 0 15px rgba(255, 122, 0, 0.5);
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+}
+
+.divider-small {
+    width: 50px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 1rem auto 1.5rem;
+}
+
+/* Header Section */
+.page-header {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAxKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==') repeat;
+}
+
+/* Belief Section */
+.belief-section {
+    padding: 4rem 2rem;
+    background-color: #0a0a0a;
+}
+
+.belief-quote {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.belief-text {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.belief-footer {
+    font-size: 0.9rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+/* Challenge Section */
+.challenge-section {
+    padding: 4rem 2rem;
+    background-color: #0a0a0a;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.rules-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rule-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rule-number {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #FF7A00;
+    margin-right: 1rem;
+    min-width: 2.5rem;
+}
+
+.rule-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.rules-footer {
+    font-size: 0.8rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Reward Section */
+.reward-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAxKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==') repeat;
+    text-align: center;
+}
+
+.reward-amounts {
+    margin-bottom: 1.5rem;
+}
+
+.reward-amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #FF7A00;
+    margin: 0.5rem 0;
+    letter-spacing: -0.01em;
+}
+
+.reward-or {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0.5rem 0;
+}
+
+.reward-type {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.reward-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Capital Section */
+.capital-section {
+    padding: 4rem 2rem;
+    background-color: #0a0a0a;
+}
+
+.capital-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.capital-quote {
+    font-size: 1rem;
+    font-style: italic;
+    padding-left: 1.5rem;
+    border-left: 3px solid #FF7A00;
+    margin: 1.5rem 0;
+    color: #fff;
+}
+
+/* Terms Section */
+.terms-section {
+    padding: 4rem 2rem;
+    background-color: #0a0a0a;
+}
+
+.terms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.term-box {
+    background-color: #111;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.term-number {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FF7A00;
+    margin-right: 1rem;
+    min-width: 2rem;
+}
+
+.term-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.terms-footer {
+    font-size: 0.8rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Window Section */
+.window-section {
+    padding: 4rem 2rem;
+    background-color: #0a0a0a;
+}
+
+.window-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+}
+
+.registration-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #FF7A00;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.status-text {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Seat Section */
+.seat-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAxKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==') repeat;
+    text-align: center;
+}
+
+.seat-text {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.seat-footer {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+.page-footer {
+    padding: 2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.rules-container {
+    margin-bottom: 2rem;
+}
+
+.rules-container .rule-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rules-container .rule-number {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FF7A00;
+    margin-right: 0.75rem;
+    min-width: 2rem;
+}
+
+.rules-container .rule-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.acknowledge-section {
+    margin-bottom: 1.5rem;
+}
+
+.acknowledge-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+}
+
+.checkbox-group {
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #555;
+    border-radius: 4px;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    color: #FF7A00;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.checkbox-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.modal-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #FF7A00;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.modal-button:hover {
+    background-color: #FF8C2D;
+    box-shadow: 0 0 15px rgba(255, 122, 0, 0.5);
+}
+
+.modal-button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.helper-text {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #222;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #FF7A00;
+    box-shadow: 0 0 10px rgba(255, 122, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .reward-amount {
+        font-size: 2.5rem;
+    }
+    
+    .modal-content {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .cta-button,
+    .modal-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Hover Effects */
+.button-hover-glow {
+    box-shadow: 0 0 15px rgba(255, 122, 0, 0.5);
+}
+
+/* Disabled Button State */
+.disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Focus States */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #FF7A00;
+    box-shadow: 0 0 10px rgba(255, 122, 0, 0.3);
+}
+    </style>
+</head>
+<body>
+    <!-- Main Landing Page -->
+    <div class="landing-page">
+        <header class="page-header">
+            <div class="container">
+                <h1 class="main-title">TRADING $10 IS HARDER THAN TRADING $10,000</h1>
+                <p class="subtitle">This is not a money flip. This is a pressure test.<br>14 days. $10. No second chances.</p>
+                <button class="cta-button" id="joinChallengeBtn">JOIN THE CHALLENGE</button>
+            </div>
+        </header>
+
+        <section class="belief-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">THE BELIEF</span>
+                </div>
+                <blockquote class="belief-quote">"IF I HAD MORE CAPITAL, I'D TRADE BETTER."</blockquote>
+                <p class="belief-text">You've told yourself this. Everyone has.</p>
+                <p class="belief-text">More capital doesn't fix discipline. It amplifies what's already broken.</p>
+                <p class="belief-text">A trader who can't survive with $10 will blow $10,000 faster.</p>
+                <hr class="divider">
+                <p class="belief-footer">This challenge strips away the excuses. What remains is you.</p>
+            </div>
+        </section>
+
+        <section class="challenge-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">THE CHALLENGE</span>
+                </div>
+                <h2 class="section-title">THREE RULES. NO EXCEPTIONS.</h2>
+                
+                <div class="rules-list">
+                    <div class="rule-item">
+                        <span class="rule-number">01</span>
+                        <span class="rule-text">START WITH $10</span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-number">02</span>
+                        <span class="rule-text">TRADE FOR 14 DAYS</span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-number">03</span>
+                        <span class="rule-text">DO NOT BLOW THE ACCOUNT</span>
+                    </div>
+                </div>
+                <p class="rules-footer">THESE ARE ENFORCED RULES. NOT SUGGESTIONS.</p>
+            </div>
+        </section>
+
+        <section class="reward-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">THE REWARD</span>
+                </div>
+                <div class="reward-amounts">
+                    <div class="reward-amount">$5,000</div>
+                    <div class="reward-or">or</div>
+                    <div class="reward-amount">$10,000</div>
+                </div>
+                <p class="reward-type">PROP ACCOUNT</p>
+                <hr class="divider-small">
+                <p class="reward-description">Survive the challenge. Prove your discipline.<br>Receive real capital to trade.</p>
+            </div>
+        </section>
+
+        <section class="capital-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">IMPORTANT</span>
+                </div>
+                <h2 class="section-title">THIS IS NOT ABOUT CAPITAL.</h2>
+                <p class="capital-text">This challenge does not claim that having more capital makes you a better trader.</p>
+                <p class="capital-text">It reveals how you behave under pressure. How you manage risk when the margin for error is razor thin.</p>
+                <blockquote class="capital-quote">$10 exposes everything. Impatience. Greed. Fear. Revenge trading. Every weakness surfaces when you have no room to recover.</blockquote>
+                <p class="capital-text">The traders who survive are not lucky. They are controlled.</p>
+            </div>
+        </section>
+
+        <section class="terms-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">RULES & STRUCTURE</span>
+                </div>
+                <h2 class="section-title">THE TERMS ARE FINAL</h2>
+                
+                <div class="terms-grid">
+                    <div class="term-box">
+                        <span class="term-number">01</span>
+                        <span class="term-text">New trading account only</span>
+                    </div>
+                    <div class="term-box">
+                        <span class="term-number">02</span>
+                        <span class="term-text">$10 starting balance — no more, no less</span>
+                    </div>
+                    <div class="term-box">
+                        <span class="term-number">03</span>
+                        <span class="term-text">No top-ups permitted</span>
+                    </div>
+                    <div class="term-box">
+                        <span class="term-number">04</span>
+                        <span class="term-text">No gambling behavior</span>
+                    </div>
+                    <div class="term-box">
+                        <span class="term-number">05</span>
+                        <span class="term-text">Account must survive the full 14 days</span>
+                    </div>
+                    <div class="term-box">
+                        <span class="term-number">06</span>
+                        <span class="term-text">One violation and you're disqualified</span>
+                    </div>
+                </div>
+                <p class="terms-footer">READ CAREFULLY. THERE ARE NO EXCEPTIONS.</p>
+            </div>
+        </section>
+
+        <section class="window-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">LIMITED ENTRY</span>
+                </div>
+                <h2 class="section-title">THE WINDOW CLOSES</h2>
+                <p class="window-text">Slots are limited. Once the challenge begins, entry closes permanently.</p>
+                <p class="window-text">There is no late registration. No exceptions. No waiting list.</p>
+                <p class="window-text">If you hesitate, the opportunity passes to someone else.</p>
+                <div class="registration-status">
+                    <div class="status-dot"></div>
+                    <span class="status-text">REGISTRATION OPEN</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="seat-section">
+            <div class="container">
+                <h2 class="section-title">THE SEAT IS OPEN</h2>
+                <p class="seat-text">If you wait, it goes to someone else.</p>
+                <button class="cta-button" id="joinChallengeBtnBottom">JOIN THE CHALLENGE NOW</button>
+                <p class="seat-footer">THIS IS NOT FOR EVERYONE.</p>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <p>THE CHALLENGE</p>
+        </footer>
+    </div>
+
+    <!-- Rules Modal -->
+    <div class="modal-overlay" id="rulesModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeRulesBtn">×</button>
+            <h2 class="modal-title">THE RULES</h2>
+            
+            <div class="rules-container">
+                <div class="rule-item">
+                    <span class="rule-number">01</span>
+                    <span class="rule-text">Start with exactly $10</span>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">02</span>
+                    <span class="rule-text">Trade for 14 days</span>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">03</span>
+                    <span class="rule-text">If the account is blown, you are out</span>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">04</span>
+                    <span class="rule-text">Highest balance at the end wins</span>
+                </div>
+            </div>
+            
+            <div class="acknowledge-section">
+                <h3 class="acknowledge-title">ACKNOWLEDGE TO PROCEED</h3>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="acknowledge1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">I understand this challenge is about survival, not profits.</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="acknowledge2">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">I understand that if I blow the account, I am disqualified.</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button class="modal-button" id="proceedToAccessBtn" disabled>PROCEED TO ACCESS</button>
+            <p class="helper-text">Check both boxes to continue</p>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div class="modal-overlay" id="registrationModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeRegistrationBtn">×</button>
+            <h2 class="modal-title">PROVE YOUR COMMITMENT</h2>
+            
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name">NAME OR ALIAS</label>
+                    <input type="text" id="name" placeholder="Enter your name or alias" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">EMAIL ADDRESS</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telegram">TELEGRAM USERNAME</label>
+                    <input type="text" id="telegram" placeholder="@username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience">TRADING EXPERIENCE</label>
+                    <select id="experience" required>
+                        <option value="" disabled selected>Select your level</option>
+                        <option value="beginner">Beginner (0-6 months)</option>
+                        <option value="intermediate">Intermediate (6 months - 2 years)</option>
+                        <option value="advanced">Advanced (2+ years)</option>
+                    </select>
+                </div>
+                
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeToStart">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">I agree to start with a fresh $10 account.</span>
+                    </label>
+                </div>
+                
+                <button type="button" class="modal-button" id="submitRegistrationBtn">SUBMIT REGISTRATION</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all necessary elements
+    const joinChallengeBtn = document.getElementById('joinChallengeBtn');
+    const joinChallengeBtnBottom = document.getElementById('joinChallengeBtnBottom');
+    const rulesModal = document.getElementById('rulesModal');
+    const registrationModal = document.getElementById('registrationModal');
+    const closeRulesBtn = document.getElementById('closeRulesBtn');
+    const closeRegistrationBtn = document.getElementById('closeRegistrationBtn');
+    const proceedToAccessBtn = document.getElementById('proceedToAccessBtn');
+    const submitRegistrationBtn = document.getElementById('submitRegistrationBtn');
+    const acknowledge1 = document.getElementById('acknowledge1');
+    const acknowledge2 = document.getElementById('acknowledge2');
+    const agreeToStart = document.getElementById('agreeToStart');
+    const registrationForm = document.getElementById('registrationForm');
+
+    // Show Rules Modal
+    function showRulesModal() {
+        rulesModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Hide Rules Modal
+    function hideRulesModal() {
+        rulesModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Show Registration Modal
+    function showRegistrationModal() {
+        hideRulesModal();
+        registrationModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Hide Registration Modal
+    function hideRegistrationModal() {
+        registrationModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Check if both checkboxes are checked for Rules Modal
+    function checkRulesCheckboxes() {
+        if (acknowledge1.checked && acknowledge2.checked) {
+            proceedToAccessBtn.disabled = false;
+            proceedToAccessBtn.classList.remove('disabled');
+        } else {
+            proceedToAccessBtn.disabled = true;
+            proceedToAccessBtn.classList.add('disabled');
+        }
+    }
+
+    // Event Listeners
+    joinChallengeBtn.addEventListener('click', showRulesModal);
+    joinChallengeBtnBottom.addEventListener('click', showRulesModal);
+
+    closeRulesBtn.addEventListener('click', hideRulesModal);
+    closeRegistrationBtn.addEventListener('click', hideRegistrationModal);
+
+    // Rules Modal checkbox validation
+    acknowledge1.addEventListener('change', checkRulesCheckboxes);
+    acknowledge2.addEventListener('change', checkRulesCheckboxes);
+
+    // Proceed to Access button
+    proceedToAccessBtn.addEventListener('click', showRegistrationModal);
+
+    // Registration Form submission
+    submitRegistrationBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Basic form validation
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telegram = document.getElementById('telegram').value.trim();
+        const experience = document.getElementById('experience').value;
+        
+        if (!name || !email || !telegram || !experience) {
+            alert('Please fill in all fields.');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        
+        // Telegram username validation
+        if (!telegram.startsWith('@')) {
+            alert('Telegram username must start with @');
+            return;
+        }
+        
+        // If all validations pass, navigate to onboarding.html
+        window.location.href = 'onboarding.html';
+    });
+
+    // Close modals when clicking outside
+    rulesModal.addEventListener('click', function(e) {
+        if (e.target === rulesModal) {
+            hideRulesModal();
+        }
+    });
+
+    registrationModal.addEventListener('click', function(e) {
+        if (e.target === registrationModal) {
+            hideRegistrationModal();
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (rulesModal.style.display === 'flex') {
+                hideRulesModal();
+            } else if (registrationModal.style.display === 'flex') {
+                hideRegistrationModal();
+            }
+        }
+    });
+});
+    </script>
+</body>
+</html>
