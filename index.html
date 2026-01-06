@@ -831,49 +831,6 @@ select:focus {
     </div>
 
     <!-- Registration Modal -->
-    <div class="modal-overlay" id="registrationModal">
-        <div class="modal-content">
-            <button class="close-btn" id="closeRegistrationBtn">×</button>
-            <h2 class="modal-title">PROVE YOUR COMMITMENT</h2>
-            
-            <form id="registrationForm">
-                <div class="form-group">
-                    <label for="name">NAME OR ALIAS</label>
-                    <input type="text" id="name" placeholder="Enter your name or alias" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">EMAIL ADDRESS</label>
-                    <input type="email" id="email" placeholder="your@email.com" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telegram">TELEGRAM USERNAME</label>
-                    <input type="text" id="telegram" placeholder="@username" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="experience">TRADING EXPERIENCE</label>
-                    <select id="experience" required>
-                        <option value="" disabled selected>Select your level</option>
-                        <option value="beginner">Beginner (0-6 months)</option>
-                        <option value="intermediate">Intermediate (6 months - 2 years)</option>
-                        <option value="advanced">Advanced (2+ years)</option>
-                    </select>
-                </div>
-                
-                <div class="checkbox-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="agreeToStart">
-                        <span class="checkmark"></span>
-                        <span class="checkbox-text">I agree to start with a fresh $10 account.</span>
-                    </label>
-                </div>
-                
-                <button type="button" class="modal-button" id="submitRegistrationBtn">SUBMIT REGISTRATION</button>
-            </form>
-        </div>
-    </div>
 
     <script>
         // script.js
@@ -1002,3 +959,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
